@@ -9,6 +9,7 @@ import { CAFE_INFO, MENU_ITEMS } from './data/cafeData';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { BrandIntro } from './components/BrandIntro';
+import { FloatingFoodShowcase } from './components/FloatingFoodShowcase';
 import { SignatureMenu } from './components/SignatureMenu';
 import { BubbleTeaFeature } from './components/BubbleTeaFeature';
 import { AsianFoodExperience } from './components/AsianFoodExperience';
@@ -113,6 +114,12 @@ export default function App() {
 
         {/* Brand Manifesto Intro */}
         <BrandIntro />
+
+        {/* Continuous Left-to-Right Floating Food Stream */}
+        <FloatingFoodShowcase
+          onSelectItemForCustomize={(item) => setCustomizingItem(item)}
+          onQuickAdd={handleQuickAdd}
+        />
 
         {/* Signature Menu */}
         <SignatureMenu

@@ -99,4 +99,83 @@
     animation: none !important;
     opacity: 0.15;
   }
+  .animate-food-slide-ltr,
+  .animate-food-slide-rtl,
+  .animate-food-float-1,
+  .animate-food-float-2,
+  .animate-food-float-3 {
+    animation: none !important;
+  }
+}
+
+/* Continuous Food Sliding Motion (Left to Right / Infinite Track) */
+@keyframes slideMarqueeLtoR {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideMarqueeRtoL {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Continuous Vertical Floating & Bobbing Oscillations */
+@keyframes foodFloatY1 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes foodFloatY2 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+.animate-food-slide-ltr {
+  display: flex;
+  width: max-content;
+  animation: slideMarqueeLtoR var(--food-slide-speed, 45s) linear infinite;
+  will-change: transform;
+}
+
+.animate-food-slide-rtl {
+  display: flex;
+  width: max-content;
+  animation: slideMarqueeRtoL var(--food-slide-speed, 45s) linear infinite;
+  will-change: transform;
+}
+
+.animate-food-slide-ltr:hover,
+.animate-food-slide-rtl:hover {
+  animation-play-state: paused;
+}
+
+.animate-food-float-1 {
+  animation: foodFloatY1 4.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-food-float-2 {
+  animation: foodFloatY2 5.4s ease-in-out infinite 0.8s;
+  will-change: transform;
+}
+
+.animate-food-float-3 {
+  animation: foodFloatY1 5.1s ease-in-out infinite 1.6s;
+  will-change: transform;
 }
