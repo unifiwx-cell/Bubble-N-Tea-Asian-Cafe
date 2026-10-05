@@ -1,0 +1,6 @@
+{
+  "name": "Bubble N Tea Asian Cafe",
+  "description": "Bubble N Tea Asian Cafe (珍珠奶茶传 / বাবল্ এন টি এশিয়ান ক্যাফে) in Bidhannagar, Kolkata. Artisanal bubble tea, Japanese cheesecake, ramen, chili oil wontons, and Korean street bites in an aesthetic K-pop / J-pop inspired cafe.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

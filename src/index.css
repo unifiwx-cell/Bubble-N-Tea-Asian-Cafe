@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-asian: 'Noto Serif JP', serif;
+    --font-bengali: 'Hind Siliguri', sans-serif;
+  }
+
+  body {
+    background-color: #0d0c0c;
+    color: #f5f2eb;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-asian {
+  font-family: var(--font-asian);
+}
+
+.font-bengali {
+  font-family: var(--font-bengali);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111110;
+}
+::-webkit-scrollbar-thumb {
+  background: #33312e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #55514b;
+}
+
+/* Subtle Film Grain Overlay */
+.film-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Asian Hanko Stamp style */
+.hanko-stamp {
+  border: 1.5px solid #d94334;
+  color: #d94334;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+}
+
+/* Soft ambient glow */
+.boba-glow {
+  box-shadow: 0 0 40px -10px rgba(224, 112, 85, 0.2);
+}
+
+/* Elegant Floating Boba Pearl Styles */
+@keyframes floatBobaSlow {
+  0% {
+    transform: translateY(105vh) translateX(0px) scale(0.9);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--boba-target-opacity, 0.35);
+  }
+  50% {
+    transform: translateY(50vh) translateX(var(--boba-sway, 25px)) scale(1.02);
+  }
+  85% {
+    opacity: var(--boba-target-opacity, 0.35);
+  }
+  100% {
+    transform: translateY(-15vh) translateX(calc(var(--boba-sway, 25px) * -0.6)) scale(0.95);
+    opacity: 0;
+  }
+}
+
+.animate-boba-float {
+  animation: floatBobaSlow var(--boba-duration, 16s) infinite linear;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-boba-float {
+    animation: none !important;
+    opacity: 0.15;
+  }
+}
